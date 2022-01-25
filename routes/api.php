@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\StudentController;
 use App\Http\Controllers\Api\SectionController;
 use App\Http\Controllers\Api\SubjectController;
 use App\Http\Controllers\Api\StudentClassController;
@@ -32,3 +33,11 @@ Route::get('/section/{id}', [SectionController::class, 'show']);
 Route::get('/section/edit/{id}', [SectionController::class, 'edit']);
 Route::post('/section/update/{id}', [SectionController::class, 'update']);
 Route::get('/section/delete/{id}', [SectionController::class, 'delete']);
+
+
+Route::get('/student', [StudentController::class, 'index']);
+Route::post('/student/store', [StudentController::class, 'store']);
+Route::get('/student/{id}', [StudentController::class, 'show']);
+Route::get('/student/edit/{id}', [StudentController::class, 'edit']);
+Route::post('/student/update/{id}', [StudentController::class, 'update']);
+Route::get('/student/delete/{id}', [StudentController::class, 'delete']);
